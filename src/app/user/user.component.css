@@ -1,0 +1,49 @@
+.text-area-field{
+    width: 830px;
+    height: 400px;   
+}
+
+.rTable { 
+    display: table; 
+}
+
+.rTableRow { 
+    display: table-row; 
+}
+
+.rTableBody { 
+    display: table-row-group; 
+    text-align: center;
+}
+
+.generate{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    .text-area-field {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+textarea:invalid {
+    border: 1px solid red;
+}
+
+textarea:valid {
+    border: 1px solid lime;
+}
+
+.error-para{
+    color: red;
+    font-weight: bold;
+}
