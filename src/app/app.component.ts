@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'front-view';
   name = 'Dinesh Kumar';
+  
 }

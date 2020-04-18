@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 
-export class UserService{
+export class PojoConverterService{
     private REST_API_URL = "http://192.168.0.108:8085/backend-services/home/welcome";
 
     private REST_POST_API_URL = "http://192.168.0.108:8085/backend-services/home/create";

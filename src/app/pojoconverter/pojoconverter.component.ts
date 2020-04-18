@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserService } from './user.service'
+import { PojoConverterService } from './pojoconverter.service'
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-pojoconverter',
+  templateUrl: './pojoconverter.component.html',
+  styleUrls: ['./pojoconverter.component.css']
 })
 
-export class UserComponent implements OnInit {
+export class PojoconverterComponent implements OnInit {
 
   reponse = "";
   error: string;
@@ -18,12 +18,12 @@ export class UserComponent implements OnInit {
     address : 'Delhi'
   }
 
-  constructor(private userService: UserService) { 
+  constructor(private pojoConverterService: PojoConverterService) { 
     
   }
 
   ngOnInit(): void {
-    this.userService.sendGetRequest().subscribe((data: any)=>{
+    this.pojoConverterService.sendGetRequest().subscribe((data: any)=>{
       console.log("***************This is ngOnInit**************");
       this.reponse = data.key;
     });
@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
     console.log("jsonstr::"+jsonstr)
     if(null != jsonstr && "" != jsonstr && this.validateInputJson(jsonstr)){
       this.error = "";
-      this.userService.sendPostRequest(jsonstr).subscribe(resp =>{
+      this.pojoConverterService.sendPostRequest(jsonstr).subscribe(resp =>{
         console.log("***************This is postData**************");
         const blob = new Blob([resp], {
           type: 'application/zip'

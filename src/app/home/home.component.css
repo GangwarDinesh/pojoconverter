@@ -1,0 +1,25 @@
+.tablecell{
+    display: table-cell;
+    padding: 10px;
+    text-align: justify;
+    /*border-bottom: 1px solid black;*/
+}
+
+#resp-table {
+    width: 100%;
+    display: table;
+}
+
+.resp-table-row{
+    display: table-row;
+}
+
+.table-body-cell{
+    display: table-cell;
+    /*border: 1px solid black;*/
+}
+
+.para-header{
+    font-size: 15px;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+<div class="card-container">
+    <div class="rTable">
+        <div class="rTableRow">
+            <div class="rTableBody">
+                <textarea #jsonstr class="text-area-field" name="jsonstr" required></textarea>
+            </div>
+            <div class="rTableBody"> 
+                <button mat-raised-button class="generate" (click)="createPojo(jsonstr.value)"> Generate Pojo</button>
+            </div>
+            <div class="rTableBody"> 
+                <p class="error-para">{{error}}</p>
+            </div>
+        </div>
+    </div>
+  </div>
