@@ -1,14 +1,13 @@
 <div id="resp-table">
     <div class="resp-table-row">
-        <div class="table-body-cell">
-            <img src="/assets/img/left.gif" style="width: 96%;height: 67%;">
+        <div class="table-body-cell" style="width: 23%;">
+            <img src="/assets/img/left.gif" style="width: 100%;height: 100%;vertical-align: baseline;">
         </div>
         <div class="table-body-cell">
-            <!--app-carousel></app-carousel-->
-            <img style="width: 100%;"  height="400" src="/assets/img/carousel1.jpg"/>
+            <app-carousel></app-carousel>            
         </div>
-        <div class="table-body-cell">
-            <img src="/assets/img/left.gif" style="width: 96%;height: 67%;margin-left: 10px;">
+        <div class="table-body-cell" style="width: 23%;">
+            <img src="/assets/img/left.gif" style="width: 100%;height: 100%;vertical-align: baseline;">
         </div>
     </div>
     <div class="resp-table-row">
@@ -25,10 +24,37 @@
     
     <div class="resp-table-row">
         <div class="table-body-cell" style="border-right: 1px solid gray;">
-            <ul>
-                <li><strong>Logo.</strong> This can be your name or your business's logo, either one helping to remind your readers who or what is publishing this content. How heavily you want to brand this blog, in relation to your main brand, is up to you.</li>
-                <li><strong>"About" page.</strong> You might already have an "About" blurb describing yourself or your business. Your blog's "About" section is an extension of this higher-level statement. Think of it as your blog's mission statement, which serves to support your company's goals.</li>
-            </ul>
+            <div class="container">
+                <form action="/action_page.php">
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="name">Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="name" name="name" placeholder="Your name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="email">Email</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="email" name="email" placeholder="Your Email-Id..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="subject">Quote</label>
+                    </div>
+                    <div class="col-75">
+                      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <input type="submit" value="Post Your Quote">
+                  </div>
+                </form>
+              </div>
         </div>
         <div class="table-body-cell" style="padding-left: 0.5em;">
             <p class="para-header">
@@ -53,9 +79,33 @@
             </p>
         </div>
         <div class="table-body-cell" style="border-left: 1px solid gray;">
+            <h3>Today's top quotes: </h3>
             <ul>
-                <li><strong>Logo.</strong> This can be your name or your business's logo, either one helping to remind your readers who or what is publishing this content. How heavily you want to brand this blog, in relation to your main brand, is up to you.</li>
-                <li><strong>"About" page.</strong> You might already have an "About" blurb describing yourself or your business. Your blog's "About" section is an extension of this higher-level statement. Think of it as your blog's mission statement, which serves to support your company's goals.</li>
+                <li>
+                    <strong class="blink">New*</strong> 
+                    <p class="quote-para">
+                        मैं लव हूँ पर मेरी बात तुम हो,
+                        और मैं तब हूँ जब मेरे साथ तुम हो।
+                    </p>
+                </li>
+                <li>
+                    <strong class="blink" >New*</strong> 
+                    <p class="quote-para">
+                        तू चाँद मैं सितारा होता,
+                        आसमान में एक आशिया हमारा होता।
+                        लोग तुझे दूर से देखा करते और
+                        सिर्फ पास रहने का हक हमारा होता।
+                    </p>
+                </li>
+                <li>
+                    <strong class="blink" >New*</strong> 
+                    <p class="quote-para">
+                        जब खामोश आँखों से बात होती है,
+                        तो ऐसे ही मोहब्बत की शुरुआत होती है,
+                        तेरे ही ख्यालों में खोये रहते हैं,
+                        न जाने कब दिन और कब रात होती है।
+                    </p>
+                </li>
             </ul>
         </div>
     </div>

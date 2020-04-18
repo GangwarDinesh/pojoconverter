@@ -11,8 +11,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { SlickCarouselModule } from 'ngx-slick-carousel'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 
 @NgModule({
@@ -27,8 +26,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     CarouselComponent
   ],
   imports: [
-    MDBBootstrapModule.forRoot(),
-    SlickCarouselModule,
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

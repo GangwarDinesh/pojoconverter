@@ -11,18 +11,5 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  slides = [  
-    { img: "../assets/img/carousel1.jpg" },  
-    { img: "../assets/img/carousel1.jpg" },  
-    { img: "../assets/img/carousel2.jpg" },  
-    { img: "../assets/img/carousel2.jpg" }  
-  ];  
   
-  slideConfig = {  
-    "slidesToShow": 1,  
-    "slidesToScroll": 4,  
-    "dots": true,  
-    "infinite": true  
-  }; 
-
 }
