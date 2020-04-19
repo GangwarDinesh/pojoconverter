@@ -27,6 +27,7 @@
     "@types/chart.js": "^2.9.19",
     "@types/jquery": "^3.3.35",
     "angular-bootstrap-md": "^9.1.0",
+    "angular-http-deserializer": "^1.0.13",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.5.0",

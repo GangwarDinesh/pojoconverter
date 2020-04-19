@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from './home.service';
+import {QuoteModel} from '../models/quote-model';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public quotes: QuoteModel[];
+  error: string;
+  constructor(private homeService: HomeService) { 
+    
+  }
 
   ngOnInit(): void {
+    this.homeService.sendGetRequest().subscribe(quotes=> this.quotes = quotes);
+  }
+
+  public createPojo(jsonstr: string){
+    console.log("jsonstr::"+jsonstr)
+      this.homeService.sendPostRequest(jsonstr).subscribe(resp =>{
+        console.log("***************This is postData**************");
+      });   
   }
 
 }

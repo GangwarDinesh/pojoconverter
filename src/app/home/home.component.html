@@ -80,33 +80,17 @@
         </div>
         <div class="table-body-cell" style="border-left: 1px solid gray;">
             <h3>Today's top quotes: </h3>
-            <ul>
-                <li>
-                    <strong class="blink">New*</strong> 
-                    <p class="quote-para">
-                        मैं लव हूँ पर मेरी बात तुम हो,
-                        और मैं तब हूँ जब मेरे साथ तुम हो।
-                    </p>
+
+            <div *ngIf="quotes">
+              <ul>
+                <li *ngFor="let quote of quotes;">
+                  <strong class="blink">New*</strong> 
+                  <p class="quote-para">
+                    {{quote.quoteText}} - By <span style="color: green;">{{quote.quoteOwnerName}}</span>
+                  </p>
                 </li>
-                <li>
-                    <strong class="blink" >New*</strong> 
-                    <p class="quote-para">
-                        तू चाँद मैं सितारा होता,
-                        आसमान में एक आशिया हमारा होता।
-                        लोग तुझे दूर से देखा करते और
-                        सिर्फ पास रहने का हक हमारा होता।
-                    </p>
-                </li>
-                <li>
-                    <strong class="blink" >New*</strong> 
-                    <p class="quote-para">
-                        जब खामोश आँखों से बात होती है,
-                        तो ऐसे ही मोहब्बत की शुरुआत होती है,
-                        तेरे ही ख्यालों में खोये रहते हैं,
-                        न जाने कब दिन और कब रात होती है।
-                    </p>
-                </li>
-            </ul>
+              </ul>
+            </div>
         </div>
     </div>
 </div>
