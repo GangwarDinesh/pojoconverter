@@ -1,3 +1,4 @@
+<meta meta charset=utf-8>
 <div id="resp-table">
     <div class="resp-table-row">
         <div class="table-body-cell" style="width: 23%;">
@@ -25,33 +26,43 @@
     <div class="resp-table-row">
         <div class="table-body-cell" style="border-right: 1px solid gray;">
             <div class="container">
-                <form action="/action_page.php">
+                <form [formGroup]="quotationForm" (ngSubmit)="onSubmit()">
                   <div class="row">
                     <div class="col-25">
-                      <label for="name">Name</label>
+                      <label for="name">Name <em>*</em></label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="name" name="name" placeholder="Your name..">
+                      <input type="text" required placeholder="Your name.." formControlName="quoteOwnerName" [ngClass]="{ 'is-invalid': submitted && f.quoteOwnerName.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.quoteOwnerName.errors" class="invalid-feedback">
+                      <div *ngIf="f.quoteOwnerName.errors.required" class="error-message">Name is required</div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-25">
-                      <label for="email">Email</label>
+                      <label for="email">Email <em>*</em></label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="email" name="email" placeholder="Your Email-Id..">
+                      <input type="text" id="email" formControlName="email" placeholder="Your Email-Id.." [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required" class="error-message">Email is required</div>
+                      <div *ngIf="f.email.errors.email" class="error-message">Email must be a valid email address</div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-25">
-                      <label for="subject">Quote</label>
+                      <label for="subject">Quote <em>*</em></label>
                     </div>
                     <div class="col-75">
-                      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                      <textarea id="subject" formControlName="quoteText" placeholder="Write something.." style="height:200px"  [ngClass]="{ 'is-invalid': submitted && f.quoteText.errors }"></textarea>
+                    </div>
+                    <div *ngIf="submitted && f.quoteText.errors" class="invalid-feedback">
+                      <div *ngIf="f.quoteText.errors.required" class="error-message">Quote is required</div>
                     </div>
                   </div>
                   <div class="row">
-                    <input type="submit" value="Post Your Quote">
+                    <button class="btn btn-primary mr-1">Post Your Quote</button>
                   </div>
                 </form>
               </div>

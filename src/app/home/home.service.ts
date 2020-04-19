@@ -23,8 +23,8 @@ export class HomeService{
         );
       }
 
-    public sendPostRequest(data: any){
-        return this.httpClient.post(this.POST_QUOTES,data, {responseType: 'json'});
+    public sendPostRequest(quoteModel: QuoteModel){
+        return this.httpClient.post(this.POST_QUOTES,quoteModel);
     }
 
 }

@@ -103,3 +103,19 @@ input[type=text], select, textarea {
       margin-top: 0;
     }
   }
+
+  .error-message{
+    float: right;
+    padding-right: 0.5em;	
+    color: #dc3545!important;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  em{
+    color: red;
+  }
+
+  .invalid-feedback{
+    display: block!important;
+  }
