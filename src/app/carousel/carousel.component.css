@@ -8,13 +8,13 @@
 
 ngb-carousel {
   max-width: 700px;
-  margin: 50px auto;
+  margin: auto auto;
 }
 
 ngb-carousel img {
   width: 100%;
   outline: none;
-  height: 550px;
+  height: 400px;
 }
 
 ngb-carousel {
@@ -51,4 +51,8 @@ ngb-carousel {
 
 .carousel-indicators{
   z-index: 20;
+}
+
+.img-tag{
+  border-radius: 10px 10px 10px 10px;
 }
