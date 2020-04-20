@@ -11,5 +11,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  selectedIndex = 'home';
+  select(name: string) {
+      this.selectedIndex = name;
+  }
 
 }

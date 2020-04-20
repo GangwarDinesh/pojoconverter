@@ -1,8 +1,8 @@
 <div class="toolbar" role="banner">
     <div class="topnav">
-      <a class="active" routerLink="/home">Home</a>
-      <a routerLink="/pojoconverter">Pojo Converter</a>
-      <a routerLink="/contact-us">Contact</a>
-      <a routerLink="/about-us">About</a>
+      <a (click)="select('home')" [ngClass]="{'active': selectedIndex === 'home'}"  class="active" routerLink="/home">Home</a>
+      <a (click)="select('pojo')" [ngClass]="{'active': selectedIndex === 'pojo'}"  routerLink="/pojoconverter">Pojo Converter</a>
+      <a (click)="select('contact')" [ngClass]="{'active': selectedIndex === 'contact'}"   routerLink="/contact-us">Contact</a>
+      <a (click)="select('about')" [ngClass]="{'active': selectedIndex === 'about'}"   routerLink="/about-us">About</a>
     </div>
   </div>
