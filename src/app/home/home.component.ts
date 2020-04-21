@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import {QuoteModel} from '../models/quote-model';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   submitted = false;
   public quotes: QuoteModel[];
   error: string;
-  //form: FormGroup;
 
   constructor(private homeService: HomeService, private formBuilder: FormBuilder) { 
     
