@@ -1,62 +1,53 @@
-<div class="container-contact100">
-    <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
-
-    <div class="wrap-contact100">
-        <div class="contact100-form-title" style="background-image: url(images/bg-01.jpg);">
-            <span class="contact100-form-title-1">
-                Contact Us
-            </span>
-
-            <span class="contact100-form-title-2">
-                Feel free to drop us a line below!
-            </span>
+<div class="container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Full Name <em>*</em></label>
         </div>
-
-        <form class="contact100-form validate-form"  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            <div class="wrap-input100 validate-input">
-                <span class="label-input100">Full Name:</span>
-                <input class="input100" required type="text" name="name" placeholder="Enter full name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
-                <div class="focus-input100 invalid-feedback" *ngIf="submitted && f.name.errors">
-                    <span *ngIf="f.name.errors.required" class="error-message">Name is required</span>
-                </div>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                <span class="label-input100">Email:</span>
-                <input class="input100" type="text" formControlName="email" name="email" placeholder="Enter email addess">
-                <div class="focus-input100 invalid-feedback" *ngIf="submitted && f.email.errors">
-                    <span *ngIf="f.email.errors.required" class="error-message">Email is required</span>
-                    <span *ngIf="f.email.errors.email" class="error-message">Email must be a valid email address</span>
-                </div>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate="Phone is required">
-                <span class="label-input100">Phone:</span>
-                <input class="input100" type="text" formControlName="phone" name="phone" placeholder="Enter phone number">
-                <div class="focus-input100 invalid-feedback" *ngIf="submitted && f.phone.errors">
-                    <span *ngIf="f.phone.errors.required" class="error-message">Phome number is required</span>
-                </div>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                <span class="label-input100">Message:</span>
-                <textarea class="input100" name="message" formControlName="message" placeholder="Your Comment..."></textarea>
-                <div class="focus-input100 invalid-feedback" *ngIf="submitted && f.message.errors">
-                    <span *ngIf="f.message.errors.required" class="error-message">Message is required</span>
-                </div>
-            </div>
-
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-                    <span style="line-height:0px;">
-                        Submit
-                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                    </span>
-                </button>
-            </div>
-            <div _ngcontent-ayw-c110="" [innerHtml]="message" class="container-contact100-form-btn">
-                
-            </div>
-        </form>
-    </div>
-</div>
+        <div class="col-75">
+          <input type="text" required id="name" name="name" placeholder="Enter full name.."formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        </div>
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required" class="error-message">Name is required</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Email <em>*</em></label>
+        </div>
+        <div class="col-75">
+            <input type="text" required id="email" name="email" placeholder="Enter Email-Id.."formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        </div>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required" class="error-message">Email is required</div>
+            <div *ngIf="f.email.errors.email" class="error-message">Email must be a valid email address</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Phone <em>*</em></label>
+        </div>
+        <div class="col-75">
+            <input type="text" required id="phone" name="phone" placeholder="Enter phone number.." formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+        </div>
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required" class="error-message">Phone is required</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="message">Message <em>*</em></label>
+        </div>
+        <div class="col-75">
+          <textarea id="message" formControlName="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+        <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+            <div *ngIf="f.message.errors.required" class="error-message">Message is required</div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary mr-1">Post Your Query</button>
+      </div>
+      <div class="row" [innerHtml]="message" style="padding-top: 1.1em;"> </div>
+    </form>
+  </div>
